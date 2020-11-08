@@ -1,5 +1,42 @@
 <resources>
-    <string name="app_name">StopDrinkMVVM</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">Я не Пью!</string>
+    <string name="add_note_button">Добавить</string>
+    <string name="start_label">Что использовать?</string>
+    <string name="start_btn_room">Room</string>
+    <string name="title">Заметки</string>
+    <string name="toast_enter_name">Введите имя заметки</string>
+    <string name="firebase">Firebase</string>
+    <string name="hint_email">email</string>
+    <string name="hint_password">password</string>
+    <string name="start_login_btn">Login</string>
+    <string name="toast_wrong_login_data">Введите пароль и почту</string>
+
+
+    <string name="email">Email</string>
+    <string name="name">Имя</string>
+    <string name="password">Пароль</string>
+    <string name="confirmPassword">Повторите пароль</string>
+    <string name="registration">Зарегистрироваться</string>
+    <string name="logIn">Или войдите</string>
+    <string name="youArntDrink">Вы не пьете:</string>
+    <string name="todrink">Сбросить</string>
+    <string name="writeReviews">Оставить отзыв</string>
+    <string name="newName">Новое имя</string>
+    <string name="setTime">Установить время</string>
+    <string name="save">Сохранить</string>
+    <string name="about">About</string>
+    <string name="settings">Настройки</string>
+    <string name="aboutProgram">О программе</string>
+    <string name="sign_out">Выход</string>
+    <string name="app_full_name">Приложение-счетчик дней без алкоголя</string>
+    <string name="author">Автор:</string>
+    <string name="author_name">M.V.Likhachev</string>
+    <string name="version">Версия:</string>
+    <string name="version_text">1.0.0</string>
+    <string name="profile">Профиль</string>
+    <string name="main">Главная</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="friends">Друзья</string>
+    <string name="aboutMe">Обо мне</string>
+
 </resources>
