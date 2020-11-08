@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="ru.mvlikhachev.stopdrinkmvvm.screens.MainFragment"
+        android:name="ru.mvlikhachev.stopdrinkmvvm.screens.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
