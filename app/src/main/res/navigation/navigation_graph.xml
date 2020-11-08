@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="ru.mvlikhachev.stopdrinkmvvm.screens.ProfileFragment"
+        android:name="ru.mvlikhachev.stopdrinkmvvm.screens.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
