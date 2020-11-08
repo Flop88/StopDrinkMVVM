@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.fragment_start.*
 import ru.mvlikhachev.stopdrinkmvvm.R
+import ru.mvlikhachev.stopdrinkmvvm.database.room.AppRoomRepository
 import ru.mvlikhachev.stopdrinkmvvm.databinding.FragmentStartBinding
+import ru.mvlikhachev.stopdrinkmvvm.utilits.APP_ACTIVITY
+import ru.mvlikhachev.stopdrinkmvvm.utilits.REPOSITORY
 import ru.mvlikhachev.stopdrinkmvvm.utilits.TYPE_ROOM
 
 class StartFragment : Fragment() {
@@ -35,7 +38,10 @@ class StartFragment : Fragment() {
     private fun initialization() {
         mViewModel = ViewModelProvider(this).get(StartFragmentViewModel::class.java)
         btn_room.setOnClickListener {
-            mViewModel.initDatabase(TYPE_ROOM)
+            mViewModel.initDatabase(TYPE_ROOM) {
+                APP_ACTIVITY.mNavController.navigate(R.id.action_startFragment_to_mainFragment)
+            }
+
         }
     }
 }
