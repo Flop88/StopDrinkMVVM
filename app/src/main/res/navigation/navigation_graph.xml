@@ -11,11 +11,11 @@
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
-            android:id="@+id/action_startFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
             android:id="@+id/action_startFragment_to_loginSignupFragment"
             app:destination="@id/loginSignupFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_inputDataFragment"
+            app:destination="@id/inputDataFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginSignupFragment"
@@ -31,9 +31,6 @@
         android:name="ru.mvlikhachev.stopdrinkmvvm.screens.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_loginSignupFragment"
-            app:destination="@id/loginSignupFragment" />
         <action
             android:id="@+id/action_mainFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
@@ -73,5 +70,14 @@
         <action
             android:id="@+id/action_profileFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputDataFragment"
+        android:name="ru.mvlikhachev.stopdrinkmvvm.screens.room_login.InputDataFragment"
+        android:label="fragment_input_data"
+        tools:layout="@layout/fragment_input_data" >
+        <action
+            android:id="@+id/action_inputDataFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

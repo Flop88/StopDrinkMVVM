@@ -38,5 +38,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="friends">Друзья</string>
     <string name="aboutMe">Обо мне</string>
+    <string name="date">Дата употребления алкоголя</string>
 
 </resources>
