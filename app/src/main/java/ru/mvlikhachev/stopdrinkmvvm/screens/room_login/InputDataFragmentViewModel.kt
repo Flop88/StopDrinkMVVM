@@ -10,7 +10,7 @@ import ru.mvlikhachev.stopdrinkmvvm.utilits.REPOSITORY
 
 class InputDataFragmentViewModel(application: Application) : AndroidViewModel(application) {
 
-    fun insetr(user: User, onSuccess:() -> Unit) =
+    fun insetr(user: User, onSuccess: () -> Unit) =
         viewModelScope.launch(Dispatchers.Main) {
             REPOSITORY.insert(user) {
                 onSuccess()

@@ -8,12 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.compose.navArgument
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import ru.mvlikhachev.stopdrinkmvvm.R
 import ru.mvlikhachev.stopdrinkmvvm.databinding.FragmentMainBinding
 import ru.mvlikhachev.stopdrinkmvvm.models.User
 import ru.mvlikhachev.stopdrinkmvvm.utilits.APP_ACTIVITY
+import ru.mvlikhachev.stopdrinkmvvm.utilits.calculateTimeWithoutDrink
 
 class MainFragment : Fragment() {
 
@@ -21,7 +24,11 @@ class MainFragment : Fragment() {
     private val mBinding get() = _binding!!
 
     private lateinit var mViewModel: MainFragmentViewModel
+
     private lateinit var currentUser: User
+    private lateinit var userName: String
+    private lateinit var userDate: String
+    private lateinit var daysWithoudDrink: Array<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,12 +40,24 @@ class MainFragment : Fragment() {
 
     private fun initialization() {
 
-        GlobalScope.launch {
+        GlobalScope.launch(Dispatchers.IO) {
             currentUser = mViewModel.getCurrentUser(1)
-            Log.d("getUser", "Name: ${currentUser.name}")
-            Log.d("getUser", "Date: ${currentUser.dateWhenStopDrink}")
-            mBinding.helloUsernameTextView.text = currentUser.name
+            userName = currentUser.name
+            userDate = currentUser.dateWhenStopDrink
+
+            daysWithoudDrink = calculateTimeWithoutDrink(userDate)!!
+
+            mBinding.helloUsernameTextView.text = "Здраствуйте, $userName"
+
+            //set date
+            mBinding.daysTextView.text = "${daysWithoudDrink[0]} дней"
+            mBinding.timeTextView.text = "${daysWithoudDrink[1]}:${daysWithoudDrink[2]}"
+            Log.d("testDate", "date: $userDate")
+            Log.d("testDate", "days: ${daysWithoudDrink[0]}")
+            Log.d("testDate", "hour: ${daysWithoudDrink[1]}")
+            Log.d("testDate", "minute: ${daysWithoudDrink[1]}")
         }
+
         mViewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
 
         mBinding.bottomNavigationView.setOnNavigationItemSelectedListener {item ->

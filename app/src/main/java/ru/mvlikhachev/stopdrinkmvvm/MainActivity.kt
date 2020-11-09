@@ -2,11 +2,13 @@ package ru.mvlikhachev.stopdrinkmvvm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import ru.mvlikhachev.stopdrinkmvvm.databinding.ActivityMainBinding
 import ru.mvlikhachev.stopdrinkmvvm.utilits.APP_ACTIVITY
+import ru.mvlikhachev.stopdrinkmvvm.utilits.calculateTimeWithoutDrink
 
 class MainActivity : AppCompatActivity() {
 
