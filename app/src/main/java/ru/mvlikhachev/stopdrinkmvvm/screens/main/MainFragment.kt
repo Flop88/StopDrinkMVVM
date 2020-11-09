@@ -1,13 +1,18 @@
 package ru.mvlikhachev.stopdrinkmvvm.screens.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import ru.mvlikhachev.stopdrinkmvvm.R
 import ru.mvlikhachev.stopdrinkmvvm.databinding.FragmentMainBinding
+import ru.mvlikhachev.stopdrinkmvvm.models.User
 import ru.mvlikhachev.stopdrinkmvvm.utilits.APP_ACTIVITY
 
 class MainFragment : Fragment() {
@@ -16,6 +21,7 @@ class MainFragment : Fragment() {
     private val mBinding get() = _binding!!
 
     private lateinit var mViewModel: MainFragmentViewModel
+    private lateinit var currentUser: User
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +32,15 @@ class MainFragment : Fragment() {
     }
 
     private fun initialization() {
+
+        GlobalScope.launch {
+            currentUser = mViewModel.getCurrentUser(1)
+            Log.d("getUser", "Name: ${currentUser.name}")
+            Log.d("getUser", "Date: ${currentUser.dateWhenStopDrink}")
+            mBinding.helloUsernameTextView.text = currentUser.name
+        }
         mViewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
+
         mBinding.bottomNavigationView.setOnNavigationItemSelectedListener {item ->
             when(item.itemId) {
                 R.id.profile_page -> {

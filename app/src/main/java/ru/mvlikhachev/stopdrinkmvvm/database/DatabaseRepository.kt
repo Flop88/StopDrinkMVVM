@@ -10,5 +10,6 @@ interface DatabaseRepository {
 
     suspend fun insert(user: User, onSuccess:() -> Unit )
     suspend fun delete(user: User, onSuccess:() -> Unit )
+    suspend fun getUser(userId: Int): User
 
 }

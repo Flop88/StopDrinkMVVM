@@ -42,7 +42,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputDate"
+        android:id="@+id/textInputDateRoom"
         app:errorEnabled="true"
         app:counterEnabled="true"
         app:counterMaxLength="15"

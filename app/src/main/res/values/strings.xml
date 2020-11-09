@@ -39,5 +39,6 @@
     <string name="friends">Друзья</string>
     <string name="aboutMe">Обо мне</string>
     <string name="date">Дата употребления алкоголя</string>
+    <string name="input_name_and_data">Введите имя и дату</string>
 
 </resources>
