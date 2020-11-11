@@ -14,17 +14,17 @@ data class User(
     val firebaseId: String = "",
 
     @ColumnInfo
-    val email: String = "",
+    var email: String = "",
 
     @ColumnInfo
-    val name: String = "",
+    var name: String = "",
 
     @ColumnInfo
-    val dateWhenStopDrink: String = "",
+    var dateWhenStopDrink: String = "",
 
     @ColumnInfo
-    val aboutMe: String = "",
+    var aboutMe: String = "",
 
     @ColumnInfo
-    val profileImage: String = ""
+    var profileImage: String = ""
 )

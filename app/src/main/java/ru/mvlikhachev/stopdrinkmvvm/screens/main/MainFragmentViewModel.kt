@@ -15,4 +15,11 @@ class MainFragmentViewModel(application: Application) : AndroidViewModel(applica
             return REPOSITORY.getUser(userId = userId)
     }
 
+    fun update(user: User, onSuccess: () -> Unit) =
+        viewModelScope.launch(Dispatchers.Main) {
+            REPOSITORY.update(user) {
+                onSuccess()
+            }
+        }
+
 }
