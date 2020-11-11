@@ -36,6 +36,18 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentMainBinding.inflate(layoutInflater, container, false)
+
+        val mainHandler = Handler(Looper.getMainLooper())
+        mainHandler.post(object : Runnable {
+            override fun run() {
+                //set date
+                daysWithoudDrink = calculateTimeWithoutDrink(userDate)!!
+                mBinding.daysTextView.text = "${daysWithoudDrink[0]} дней"
+                mBinding.timeTextView.text = "${daysWithoudDrink[1]}:${daysWithoudDrink[2]}"
+                mainHandler.postDelayed(this, 30000)
+            }
+        })
+
         return mBinding.root
     }
 
@@ -48,17 +60,6 @@ class MainFragment : Fragment() {
 
             mBinding.helloUsernameTextView.text = "Здраствуйте, $userName"
 
-            val mainHandler = Handler(Looper.getMainLooper())
-
-            mainHandler.post(object : Runnable {
-                override fun run() {
-                    //set date
-                    daysWithoudDrink = calculateTimeWithoutDrink(userDate)!!
-                    mBinding.daysTextView.text = "${daysWithoudDrink[0]} дней"
-                    mBinding.timeTextView.text = "${daysWithoudDrink[1]}:${daysWithoudDrink[2]}"
-                    mainHandler.postDelayed(this, 30000)
-                }
-            })
         }
 
         mViewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
@@ -73,9 +74,6 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun setTime() {
-
-    }
 
     override fun onStart() {
         super.onStart()
