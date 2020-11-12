@@ -23,7 +23,7 @@ import java.util.*
 
 class MainFragment : Fragment() {
 
-    private var _binding : FragmentMainBinding? = null
+    private var _binding: FragmentMainBinding? = null
     private val mBinding get() = _binding!!
 
     private lateinit var mViewModel: MainFragmentViewModel
@@ -71,7 +71,7 @@ class MainFragment : Fragment() {
         mViewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
 
         mBinding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when(item.itemId) {
+            when (item.itemId) {
                 R.id.profile_page -> {
                     APP_ACTIVITY.mNavController.navigate(R.id.action_mainFragment_to_profileFragment)
                 }
@@ -89,7 +89,7 @@ class MainFragment : Fragment() {
                 val newDate = sdf.format(Date())
 
                 currentUser.dateWhenStopDrink = newDate
-                mViewModel.update(currentUser){
+                mViewModel.update(currentUser) {
                     showToast("User Updated")
                 }
                 setTime(newDate)

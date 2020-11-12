@@ -14,7 +14,7 @@ import ru.mvlikhachev.stopdrinkmvvm.utilits.showToast
 
 class InputDataFragment : Fragment() {
 
-    private var _binding : FragmentInputDataBinding? = null
+    private var _binding: FragmentInputDataBinding? = null
     private val mBinding get() = _binding!!
 
     private lateinit var mViewModel: InputDataFragmentViewModel

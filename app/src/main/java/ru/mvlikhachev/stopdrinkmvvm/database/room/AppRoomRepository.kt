@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import ru.mvlikhachev.stopdrinkmvvm.database.DatabaseRepository
 import ru.mvlikhachev.stopdrinkmvvm.models.User
 
-class AppRoomRepository(private val appRoomDao: AppRoomDao) :DatabaseRepository {
+class AppRoomRepository(private val appRoomDao: AppRoomDao) : DatabaseRepository {
 
 
     override val allUsers: LiveData<List<User>>

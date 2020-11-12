@@ -14,7 +14,7 @@ import ru.mvlikhachev.stopdrinkmvvm.utilits.APP_ACTIVITY
 
 class ProfileFragment : Fragment() {
 
-    private var _binding : FragmentProfileBinding ? = null
+    private var _binding: FragmentProfileBinding? = null
     private val mBinding get() = _binding!!
 
     private lateinit var mViewModel: ProfileFragmentViewModel
@@ -24,14 +24,14 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentProfileBinding.inflate(layoutInflater, container,false)
+        _binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
         return mBinding.root
     }
 
     private fun initialization() {
         mViewModel = ViewModelProvider(this).get(ProfileFragmentViewModel::class.java)
-        mBinding.bottomNavigationView.setOnNavigationItemSelectedListener {item ->
-            when(item.itemId) {
+        mBinding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
                 R.id.main_page -> {
                     APP_ACTIVITY.mNavController.navigate(R.id.action_profileFragment_to_mainFragment)
                 }

@@ -11,8 +11,8 @@ import ru.mvlikhachev.stopdrinkmvvm.utilits.REPOSITORY
 
 class MainFragmentViewModel(application: Application) : AndroidViewModel(application) {
 
-    suspend fun getCurrentUser(userId: Int) : User {
-            return REPOSITORY.getUser(userId = userId)
+    suspend fun getCurrentUser(userId: Int): User {
+        return REPOSITORY.getUser(userId = userId)
     }
 
     fun update(user: User, onSuccess: () -> Unit) =

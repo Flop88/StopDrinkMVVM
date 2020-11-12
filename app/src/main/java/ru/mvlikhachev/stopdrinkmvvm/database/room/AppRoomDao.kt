@@ -8,10 +8,10 @@ import ru.mvlikhachev.stopdrinkmvvm.models.User
 interface AppRoomDao {
 
     @Query("select * from users_tables")
-    fun getAllUsers():LiveData<List<User>>
+    fun getAllUsers(): LiveData<List<User>>
 
     @Query("select * from users_tables where id =:userId")
-    fun getUserById(userId:Int) : User
+    fun getUserById(userId: Int): User
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(user: User)
