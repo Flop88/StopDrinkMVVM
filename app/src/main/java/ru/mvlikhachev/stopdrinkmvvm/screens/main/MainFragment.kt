@@ -63,9 +63,7 @@ class MainFragment : Fragment() {
             userDate = currentUser.dateWhenStopDrink
 
             mBinding.helloUsernameTextView.text = "Здраствуйте, $userName"
-
             setTime(userDate)
-
         }
 
         mViewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
