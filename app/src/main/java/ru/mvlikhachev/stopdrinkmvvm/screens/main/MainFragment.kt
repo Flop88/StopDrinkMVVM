@@ -27,7 +27,6 @@ class MainFragment : Fragment() {
     private val mBinding get() = _binding!!
 
     private lateinit var mViewModel: MainFragmentViewModel
-
     private lateinit var currentUser: User
     private lateinit var userName: String
     private lateinit var userDate: String
@@ -38,10 +37,8 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentMainBinding.inflate(layoutInflater, container, false)
-
         return mBinding.root
     }
-
     fun setTime(mDate: String) {
         val mainHandler = Handler(Looper.getMainLooper())
         mainHandler.post(object : Runnable {
