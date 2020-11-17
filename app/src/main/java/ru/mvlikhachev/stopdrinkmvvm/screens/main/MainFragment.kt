@@ -53,7 +53,6 @@ class MainFragment : Fragment() {
     }
 
     private fun initialization() {
-
         GlobalScope.launch(Dispatchers.IO) {
             currentUser = mViewModel.getCurrentUser(1)
             userName = currentUser.name
@@ -79,7 +78,6 @@ class MainFragment : Fragment() {
                 currentUser = mViewModel.getCurrentUser(1)
 
                 var currentDate = currentUser.dateWhenStopDrink.toString()
-
                 val sdf = SimpleDateFormat("dd.M.yyyy")
                 val newDate = sdf.format(Date())
 
