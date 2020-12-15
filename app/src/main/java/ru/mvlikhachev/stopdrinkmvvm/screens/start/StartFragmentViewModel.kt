@@ -1,7 +1,6 @@
 package ru.mvlikhachev.stopdrinkmvvm.screens.start
 
 import android.app.Application
-import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import ru.mvlikhachev.stopdrinkmvvm.database.room.AppRoomDatabase
 import ru.mvlikhachev.stopdrinkmvvm.database.room.AppRoomRepository

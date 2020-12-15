@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import ru.mvlikhachev.stopdrinkmvvm.R
-import ru.mvlikhachev.stopdrinkmvvm.databinding.FragmentMainBinding
 import ru.mvlikhachev.stopdrinkmvvm.databinding.FragmentProfileBinding
-import ru.mvlikhachev.stopdrinkmvvm.screens.main.MainFragmentViewModel
 import ru.mvlikhachev.stopdrinkmvvm.utilits.APP_ACTIVITY
 
 class ProfileFragment : Fragment() {
