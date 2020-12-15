@@ -21,5 +21,4 @@ class MainFragmentViewModel(application: Application) : AndroidViewModel(applica
                 onSuccess()
             }
         }
-
 }

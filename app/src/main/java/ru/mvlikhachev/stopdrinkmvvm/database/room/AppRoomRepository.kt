@@ -10,7 +10,6 @@ class AppRoomRepository(private val appRoomDao: AppRoomDao) : DatabaseRepository
     override val allUsers: LiveData<List<User>>
         get() = appRoomDao.getAllUsers()
 
-
     override suspend fun insert(user: User, onSuccess: () -> Unit) {
         appRoomDao.insert(user)
         onSuccess()

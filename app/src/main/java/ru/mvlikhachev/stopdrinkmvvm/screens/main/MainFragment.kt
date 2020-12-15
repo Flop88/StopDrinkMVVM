@@ -91,7 +91,6 @@ class MainFragment : Fragment() {
                 Log.d("resetButton", "current in db: $newDate")
             }
         }
-
     }
 
 
